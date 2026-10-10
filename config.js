@@ -1,7 +1,7 @@
 window.GENOVA_CFG = {
   owner: "augustoravano@gmail.com",
   firebase: {
-    apiKey: "AIzaSyBNREGAR6m_ilJuu97UEGlXXp8IGsZ50KU",
+    apiKey: "AIzaSyDMHSCtgocfU7PfZ6dRi1jrsbcFxtM7e_w",
     authDomain: "genova-572c7.firebaseapp.com",
     projectId: "genova-572c7",
     storageBucket: "genova-572c7.firebasestorage.app",
