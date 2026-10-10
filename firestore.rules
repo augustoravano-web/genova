@@ -1,0 +1,23 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Cambiá estos dos correos (en minúsculas): el tuyo y el de Bianca
+    function ok() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in ['PEGAR-TU-CORREO@gmail.com', 'PEGAR-CORREO-DE-BIANCA@gmail.com'];
+    }
+    function owner() {
+      return ok() && request.auth.token.email == 'PEGAR-TU-CORREO@gmail.com';
+    }
+    // Tu cuenta: solo vos escribís
+    match /main/{d} { allow read: if ok(); allow write: if owner(); }
+    match /main_photos/{d} { allow read: if ok(); allow write: if owner(); }
+    match /main_full/{d} { allow read: if ok(); allow write: if owner(); }
+    // Cuentas de Bianca y otras: escribe cualquiera de los dos
+    match /{col}/{d} {
+      allow read: if ok();
+      allow write: if ok() && col in ['sis', 'sis_photos', 'sis_full'];
+    }
+  }
+}
