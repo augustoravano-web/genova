@@ -379,6 +379,7 @@ function boot(){
     db.doc('sis/claims').get().then(function(c){claims=c.exists?c.data():{}}).catch(function(){claims={}}).then(function(){
       var mine=ACC.filter(function(a){return a.id!=='main'&&claims[a.id]===myId})[0];
       var firstOther=ACC.filter(function(a){return a.id!=='main'})[0];
+      if(!isOwner&&!mine&&firstOther&&!claims[firstOther.id]&&myId){claims[firstOther.id]=myId;saveClaims();mine=firstOther}
       home='main';
       var ls=lastScope();scope=(ls&&acc(ls))?ls:home;
       S=D[scope];ensureCodes();checkLock();render();
