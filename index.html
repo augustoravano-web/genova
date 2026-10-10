@@ -1033,7 +1033,7 @@ else{
       const E=t=>document.getElementById('fa-e').textContent=t;
       const g=()=>[document.getElementById('fa-m').value.trim().toLowerCase(),document.getElementById('fa-p').value];
       authBox.querySelector('form').onsubmit=async ev=>{ev.preventDefault();const[m,p]=g();try{await Au.signInWithEmailAndPassword(auth,m,p)}catch(e){E(MSG[e.code]||e.message)}};
-      document.getElementById('fa-new').onclick=async()=>{const[m,p]=g();try{const c=await Au.createUserWithEmailAndPassword(auth,m,p);await Au.sendEmailVerification(c.user)}catch(e){E(MSG[e.code]||e.message)}};
+      document.getElementById('fa-new').onclick=async()=>{const[m,p]=g();try{await Au.createUserWithEmailAndPassword(auth,m,p)}catch(e){E(MSG[e.code]||e.message)}};
       document.getElementById('fa-rs').onclick=async()=>{const[m]=g();if(!m){E('Escribí tu correo arriba.');return}try{await Au.sendPasswordResetEmail(auth,m);E('Te mandamos un mail para cambiar la contraseña.')}catch(e){E(MSG[e.code]||e.message)}};
     }
     function enter(u){
@@ -1047,7 +1047,6 @@ else{
     Au.onAuthStateChanged(auth,u=>{
       if(resolved)return;
       if(!u){show('login');return}
-      if(!u.emailVerified){show('verify','',u.email);return}
       enter(u);
     });
   }).catch(()=>done({}));
