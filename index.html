@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><title>Génova Indumentaria</title>
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="theme-color" content="#1B4332">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -304,6 +304,66 @@ td[data-l="Ingreso"],td[data-l="Fecha"]{white-space:nowrap}
   .tools select{flex:1 1 40%;min-width:130px}
   .tools .btn{flex:1 1 auto}
 }
+
+.modal{--mp:24px;padding:var(--mp)}
+@media (max-width:760px){.modal{--mp:16px}}
+.cam.pos{aspect-ratio:16/10;max-height:210px}
+.posopt{margin:12px 0 0;border:1px solid var(--line);border-radius:14px;padding:10px 14px}
+.posopt summary{cursor:pointer;font-weight:600;font-size:13.5px}
+.pick{background:var(--accent-soft);border-radius:14px;padding:12px;margin-top:12px}
+.pick small{display:block;color:var(--muted);margin:2px 0 8px}
+.chipsm{display:flex;gap:8px;flex-wrap:wrap}
+.chipsm button{border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:8px 14px;font-weight:700;font-size:13px}
+.chipsm button em{font-style:normal;color:var(--muted);margin-left:4px}
+.pcart{display:grid;gap:10px;margin-top:12px}
+.pl{display:grid;grid-template-columns:1fr auto auto;grid-template-areas:"n q x" "p p p";gap:8px 10px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:12px;background:var(--surface)}
+.pn{grid-area:n;min-width:0}.pn b{display:block}.pn small{display:block;color:var(--muted);font-size:12px}.pn small.warn{color:var(--none-ink);font-weight:700}
+.pq{grid-area:q;display:flex;align-items:center;gap:6px}
+.pq button{width:34px;height:34px;border-radius:10px;border:1px solid var(--line);font-size:19px;font-weight:700;background:var(--head)}
+.pq span{min-width:24px;text-align:center;font-weight:800;font-size:16px}
+.px{grid-area:x;width:30px;height:30px;border-radius:50%;color:var(--muted);font-size:22px;line-height:1}
+.pp{grid-area:p;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.pp input{width:120px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--surface);font-weight:600}
+.pp b{font-size:16px}
+.posfoot{position:sticky;bottom:calc(var(--mp)*-1);margin:14px calc(var(--mp)*-1) calc(var(--mp)*-1);padding:12px var(--mp) calc(var(--mp) - 4px);background:var(--surface);border-top:1px solid var(--line);box-shadow:0 -14px 24px -18px rgba(0,0,0,.35);display:grid;gap:10px}
+.posfoot:empty{display:none}
+.pt1{display:flex;justify-content:space-between;align-items:baseline}.pt1 span{color:var(--muted);font-weight:600}.pt1 b{font:800 30px var(--f-serif);letter-spacing:-.03em}
+.prec{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:end}
+.prec label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);font-weight:600}
+.prec input{font-size:18px;font-weight:700;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);width:100%}
+.pchg{border-radius:12px;padding:8px 12px;background:var(--head);text-align:right;display:flex;flex-direction:column}
+.pchg small{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pchg b{font:800 22px var(--f-serif)}
+.pchg.ok{background:var(--sold);color:var(--sold-ink)}.pchg.ok small{color:inherit}
+.pchg.bad{background:var(--none);color:var(--none-ink)}.pchg.bad small{color:inherit}
+.btn.big{padding:15px;font-size:16px;width:100%;border-radius:14px}
+.posok{text-align:center;padding:18px 8px}
+.posok i{display:grid;place-items:center;width:54px;height:54px;margin:0 auto 8px;border-radius:50%;background:var(--accent);color:#fff;font-style:normal;font-size:28px;font-weight:800}
+.posok h4{font:800 22px var(--f-serif);margin:0}.posok p{margin:2px 0 12px;color:var(--muted)}
+.posok dl{margin:0 auto;max-width:300px;display:grid;gap:6px}.posok dl div{display:flex;justify-content:space-between;font-weight:600}.posok dd{margin:0;font-weight:800}
+.posok dl .v{background:var(--sold);color:var(--sold-ink);border-radius:12px;padding:10px 12px;font-size:18px}
+
+.wrap{zoom:var(--ui,1)}
+html{touch-action:manipulation;-webkit-text-size-adjust:100%}
+body:has(#layer .modal) .toast{bottom:auto!important;top:14px}
+@media (max-width:760px){
+  input,select,textarea{font-size:16px!important}
+  aside{padding:6px 12px}
+  .logo i{width:28px;height:28px;font-size:15px}.logo b{font-size:17px}
+  .wrap{padding:10px 14px 120px!important}
+  .head{margin-bottom:10px;gap:8px}
+  .eyebrow{display:none}
+  h1{font-size:23px!important;margin:0}
+  .scopebar{margin-bottom:6px;gap:5px}.scopebar button{padding:6px 14px;font-size:13px}
+  .head .btns{gap:6px}.head .btns .btn{padding:9px 10px;font-size:13px;border-radius:11px}
+  .cards{grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px}
+  .card{padding:10px 12px;border-radius:14px}
+  .card small{font-size:10px}
+  .card b{font-size:19px!important;margin-top:2px}
+  .card span{display:none}
+  .panel{padding:14px}
+  h2{font-size:16px}
+}
 </style>
 
 <div id="app">
@@ -335,7 +395,7 @@ var PAGES=[['resumen','Resumen'],['inventario','Inventario'],['ventas','Ventas']
 function blank(){return {items:[],expenses:[],codes:{},photos:{},clients:{},history:[],pinHash:null,cats:[],catMap:{}}}
 var ACC=[{id:'main',name:'Génova',prefix:'GEN-'},{id:'sis',name:'Bianca',prefix:'BIA-'}];
 var D={main:blank(),sis:blank()},scope='main',S=D.main,home='main',P={main:{},sis:{}},isOwner=true,collabOk=true,localMode=true,watching={},claims={},myId=null;
-var CFG={brand:'Génova',sub:'INDUMENTARIA',color:'verde',moneda:'$'};
+var CFG={brand:'Génova',sub:'INDUMENTARIA',color:'verde',moneda:'$',ntfy:''};
 var COLORS={
  verde:{n:'Verde',side:'#1B4332',side2:'#2D6A4F',acc:'#1F7A52',soft:'#DDF0E5',accD:'#3DB67F',softD:'#18382A',sideD:'#10281E',side2D:'#235B43',mint:'#CFF2B8'},
  azul:{n:'Azul',side:'#17324D',side2:'#2A5A8A',acc:'#1F6FB5',soft:'#DCEAF7',accD:'#5BA7EA',softD:'#173049',sideD:'#0F2234',side2D:'#244C75',mint:'#C9E4FA'},
@@ -358,6 +418,9 @@ function applyCfg(){
   var b=document.getElementById('brandB');if(b){b.textContent=CFG.brand||'Génova';document.getElementById('brandS').textContent=CFG.sub||'';document.getElementById('brandI').textContent=(CFG.brand||'G').trim().charAt(0).toUpperCase()}
 }
 if(window.matchMedia)try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',applyCfg)}catch(e){}
+var SIZES={c:['Compacto',0.88],n:['Normal',1],g:['Grande',1.12]};
+function sizePref(){var v=null;try{v=localStorage.getItem('genova-size')}catch(e){}if(v&&SIZES[v])return v;return matchMedia('(max-width:760px)').matches?'c':'n'}
+function applySize(){document.documentElement.style.setProperty('--ui',SIZES[sizePref()][1])}
 function acc(id){for(var i=0;i<ACC.length;i++)if(ACC[i].id===id)return ACC[i];return null}
 function pfxOf(id){var a=acc(id);return a?a.prefix:'GEN-'}
 function docPath(id){return id==='main'?'main/state':'sis/'+(id==='sis'?'state':id)}
@@ -442,9 +505,33 @@ function sameAsLocal(sc,d){
   function k(o){return JSON.stringify([o.items||[],o.expenses||[],o.photos||{},o.clients||{},o.history||[],o.pinHash||null,o.cats||[],o.catMap||{}])}
   return k(d)===k(D[sc]);
 }
-function applyRemote(sc,d){load(D[sc],d);lastSaved[sc]=JSON.stringify(snap(D[sc]));lsSet(sc,lastSaved[sc]);if(sc===scope)render()}
+function hkey(h){return h.ts+'|'+h.accion+'|'+h.detalle}
+function showNote(title,body){
+  toast(title+(body?': '+body:''));
+  try{if(window.Notification&&Notification.permission==='granted'){
+    var o={body:body||'',icon:'icon-192.png',tag:'genova-'+Date.now()};
+    if(navigator.serviceWorker&&navigator.serviceWorker.ready)navigator.serviceWorker.ready.then(function(r){r.showNotification(title,o)}).catch(function(){new Notification(title,o)});
+    else new Notification(title,o);
+  }}catch(e){}
+}
+function applyRemote(sc,d){
+  var seen={};(D[sc].history||[]).forEach(function(h){seen[hkey(h)]=1});
+  load(D[sc],d);lastSaved[sc]=JSON.stringify(snap(D[sc]));lsSet(sc,lastSaved[sc]);if(sc===scope)render();
+  if(!localMode&&ui.loaded){var nw=(d.history||[]).filter(function(h){return !seen[hkey(h)]}).slice(0,3).reverse();
+    nw.forEach(function(h){showNote((acc(sc)?acc(sc).name:'Génova')+' · '+h.accion,h.detalle)})}
+}
+var pushBuf=[],pushT=null;
+function pushNow(title,msg){
+  var t=(CFG.ntfy||'').trim();if(!t)return;
+  try{fetch('https://ntfy.sh/',{method:'POST',body:JSON.stringify({topic:t,title:title,message:msg,tags:['shopping_cart']})}).catch(function(){})}catch(e){}
+}
+function queuePush(a,d){
+  if(!CFG.ntfy||localMode||isOwner)return;
+  pushBuf.push((acc(scope)?acc(scope).name+' · ':'')+a+(d?': '+d:''));
+  clearTimeout(pushT);pushT=setTimeout(function(){var m=pushBuf.join('\n');pushBuf=[];pushNow('Génova Indumentaria',m)},2500);
+}
 function useScope(sc){scope=sc;try{localStorage.setItem('genova-last',sc)}catch(e){};S=D[sc];ensureCodes();ui.q='';ui.limit=60;ui.month='all';ui.estado='disp';ui.cat='all';ui.sel={};ui.selMode=false;render();$('#main').scrollTop=0}
-function log(a,d){S.history.unshift({ts:new Date().toLocaleString('es-AR'),accion:a,detalle:d||''});if(S.history.length>200)S.history.length=200}
+function log(a,d){S.history.unshift({ts:new Date().toLocaleString('es-AR'),accion:a,detalle:d||''});if(S.history.length>200)S.history.length=200;queuePush(a,d)}
 function exportCsv(){
   if(!dl){toast('La descarga no está disponible acá');return}
   function c(v){v=v==null?'':String(v);return /[;"\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v}
@@ -710,6 +797,14 @@ function vConfig(){
    +'<b>iPhone (Safari)</b><ol><li>Abrí el link de la app en <b>Safari</b>.</li><li>Tocá el botón <b>Compartir</b> (cuadrado con flecha hacia arriba).</li><li>Elegí <b>Agregar a pantalla de inicio</b> y tocá <b>Agregar</b>.</li></ol>'
    +'<p style="margin:14px 0 4px"><b>Android (Chrome)</b></p><ol><li>Abrí el link en Chrome.</li><li>Menú ⋮ → <b>Instalar app</b> o <b>Agregar a pantalla principal</b>.</li></ol>'
    +(window.__signOut?'<div class="acts" style="justify-content:flex-start;margin-top:14px"><span class="hint" style="align-self:center">Sesión: '+esc(window.__who||'')+'</span><button class="btn" data-act="signout">Cerrar sesión</button></div>':'')+'</div>';
+  h+='<div class="panel"><div class="top"><div><h2>Tamaño de la app</h2><p class="hint">Se guarda en este dispositivo. En el celular conviene Compacto.</p></div></div><div class="f" style="max-width:300px"><label>Tamaño<select id="cf-size">'+Object.keys(SIZES).map(function(k){return '<option value="'+k+'"'+(sizePref()===k?' selected':'')+'>'+SIZES[k][0]+'</option>'}).join('')+'</select></label></div></div>';
+  var np=window.Notification?Notification.permission:'unsupported';
+  h+='<div class="panel"><div class="top"><div><h2>Avisos</h2><p class="hint">Enterate cuando alguien registra una venta o un cambio.</p></div></div>'
+   +'<p style="margin:0 0 6px"><b>En este dispositivo</b></p><p class="hint" style="margin:0 0 8px">'+(np==='granted'?'Activados: te avisa mientras la app esté abierta, también en segundo plano.':np==='denied'?'Están bloqueados en este navegador. Habilitalos en los ajustes del sitio.':np==='unsupported'?'Este navegador no permite avisos.':'Mientras la app esté abierta te avisa de cada cambio.')+'</p>'
+   +(np==='default'?'<button class="btn" data-act="notifon">Activar avisos</button>':'')
+   +(can?'<p style="margin:16px 0 6px"><b>Al celular, aunque la app esté cerrada</b> (gratis, con la app ntfy)</p><ol class="hint" style="margin:0 0 10px;padding-left:18px;display:grid;gap:4px"><li>Instalá la app <b>ntfy</b> en tu celular (App Store o Google Play).</li><li>En ntfy tocá <b>+</b> y escribí el nombre secreto de abajo.</li><li>Guardalo acá también. Listo: cada cambio de Bianca te llega al celular.</li></ol>'
+   +'<div class="f" style="max-width:560px"><label class="full">Nombre secreto del canal<input id="nt-topic" value="'+esc(CFG.ntfy||'')+'" placeholder="genova-xxxxxxxx" autocomplete="off" autocapitalize="none"></label></div>'
+   +'<div class="acts" style="justify-content:flex-start"><button class="btn" data-act="ntfygen">Generar nombre</button><button class="btn pri" data-act="ntfysave">Guardar</button><button class="btn" data-act="ntfytest">Enviar prueba</button></div><p class="hint" style="margin-top:8px">Quien conozca el nombre puede leer los avisos: no lo compartas.</p>':'')+'</div>';
   h+='<div class="panel"><div class="top"><div><h2>Seguridad</h2><p class="hint">PIN de acceso para abrir la app en este usuario.</p></div></div><button class="btn" data-page="acceso">Configurar PIN</button></div>';
   return h;
 }
@@ -1191,25 +1286,108 @@ function decodeFile(file){
   });
 }
 function beep(){try{var A=window.AudioContext||window.webkitAudioContext,c=new A(),o=c.createOscillator(),g=c.createGain();o.frequency.value=1040;g.gain.value=.15;o.connect(g);g.connect(c.destination);o.start();setTimeout(function(){o.stop();c.close()},120)}catch(e){}try{navigator.vibrate&&navigator.vibrate(60)}catch(e){}}
+var POS={lines:[],cli:'',pagado:'1',recv:'',done:null};
+function posAvail(k,vk){return S.items.filter(function(i){return tkey(i.producto)===k&&!isSold(i)&&((i.talle||'')+'|'+(i.color||''))===vk})}
+function posVariants(k){
+  var g={};S.items.forEach(function(i){if(tkey(i.producto)!==k||isSold(i))return;var vk=(i.talle||'')+'|'+(i.color||'');var v=g[vk]=g[vk]||{vk:vk,talle:i.talle||'',color:i.color||'',n:0,price:i.venta,name:i.producto};v.n++});
+  return Object.keys(g).map(function(x){return g[x]}).sort(function(a,b){return cmp(a.talle,b.talle)||cmp(a.color,b.color)});
+}
+function posTotal(){return POS.lines.reduce(function(t,l){return t+(+l.price||0)*l.qty},0)}
+function varLabel(l){return [l.talle,l.color].filter(Boolean).join(' · ')||'Sin talle ni color'}
 function scanModal(){
-  var stream=null,timer=null,running=false;
+  var stream=null,timer=null,running=false,lastCode='',lastT=0;
   function stop(){running=false;clearTimeout(timer);if(stream){stream.getTracks().forEach(function(t){t.stop()});stream=null}var c=$('#cam');if(c)c.hidden=true}
   window.__stopCam=stop;
-  modal('<h3><span>Escanear prenda</span><button id="xm" aria-label="Cerrar">×</button></h3>'
-   +'<div class="cam" id="cam" hidden><video id="s-vid" playsinline muted autoplay></video><i></i><b>Apuntá al código de barras</b></div>'
-   +'<div class="acts" style="margin:0 0 12px;justify-content:stretch"><button class="btn pri" id="s-cam" style="flex:1">Abrir cámara</button><label class="btn" style="flex:1;text-align:center;cursor:pointer">Sacar foto del código<input id="s-img" type="file" accept="image/*" capture="environment" hidden></label></div>'
-   +'<div class="f"><label class="full">O escribí / escaneá con lector<input id="s-code" placeholder="GEN-0006" autocomplete="off" autocapitalize="characters"><small style="font-weight:400">Los lectores USB o Bluetooth escriben el código solos y envían Enter.</small></label></div><div id="s-res" style="margin-top:14px"></div>');
-  function look(c){
-    c=String(c||'').trim();var k=typeByCode(c);var r=$('#s-res');
-    if(!k){r.innerHTML=c?'<div class="note">No hay ninguna prenda con el código '+esc(c)+'.</div>':'';return false}
-    var us=S.items.filter(function(i){return tkey(i.producto)===k&&!isSold(i)});var any=S.items.filter(function(i){return tkey(i.producto)===k})[0];
-    var h='<div class="prod" style="margin-bottom:8px">'+thumb(any)+'<span>'+esc(any.producto)+' <span class="code">'+codeOf(k)+'</span></span></div><p class="hint">'+us.length+' unidades disponibles</p>';
-    if(us.length){h+='<div class="tbl"><table><tbody>';us.slice(0,12).forEach(function(i){h+='<tr><td>'+tc(i)+'</td><td class="n">'+(i.venta!=null?money(i.venta):'—')+'</td><td><button class="btn sm pri" data-sell="'+i.id+'">Vender</button></td></tr>'});h+='</tbody></table></div>'}
-    r.innerHTML=h;return true;
+  modal('<h3><span>Caja</span><button id="xm" aria-label="Cerrar">×</button></h3>'
+   +'<div class="cam pos" id="cam" hidden><video id="s-vid" playsinline muted autoplay></video><i></i><b>Apuntá al código de barras</b></div>'
+   +'<div class="acts" style="margin:0 0 10px;justify-content:stretch"><button class="btn pri" id="s-cam" style="flex:1">Abrir cámara</button><label class="btn" style="flex:1;text-align:center;cursor:pointer">Foto del código<input id="s-img" type="file" accept="image/*" capture="environment" hidden></label></div>'
+   +'<div class="f"><label class="full">Código (escribí o usá un lector) y Enter<input id="s-code" placeholder="GEN-0006" autocomplete="off" autocapitalize="characters"></label></div>'
+   +'<div id="pos-pick"></div><div id="pos-cart"></div>'
+   +'<details class="posopt"><summary>Cliente y forma de pago</summary><div class="f" style="margin-top:10px"><label>Cliente<input id="pos-cli" list="dl-c" autocomplete="off" value="'+esc(POS.cli)+'"></label><label>Pago<select id="pos-pg"><option value="1"'+(POS.pagado==='1'?' selected':'')+'>Pagado</option><option value="0"'+(POS.pagado==='0'?' selected':'')+'>Queda debiendo</option></select></label></div><datalist id="dl-c">'+opts(clientNames())+'</datalist></details>'
+   +'<div id="pos-foot" class="posfoot"></div>',true);
+  var inp=$('#s-code');
+  $('#pos-cli').oninput=function(){POS.cli=this.value};$('#pos-pg').onchange=function(){POS.pagado=this.value};
+  function chg(){
+    var t=posTotal(),r=$('#pos-recv'),c=$('#pos-chg');if(!r||!c)return;
+    var v=parseFloat(String(r.value).replace(',','.'));POS.recv=r.value;
+    if(isNaN(v)||r.value===''){c.className='pchg';c.innerHTML='<small>Vuelto</small><b>—</b>';return}
+    if(v>=t){c.className='pchg ok';c.innerHTML='<small>Vuelto</small><b>'+money(v-t)+'</b>'}
+    else{c.className='pchg bad';c.innerHTML='<small>Falta</small><b>'+money(t-v)+'</b>'}
   }
-  var inp=$('#s-code');inp.addEventListener('input',function(){look(inp.value)});
-  inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();look(inp.value)}});
-  function found(code){stop();beep();inp.value=code;if(!look(code))toast('Leído: '+code)}
+  function rnd(){
+    var cart=$('#pos-cart'),foot=$('#pos-foot');if(!cart)return;
+    if(POS.done){
+      var d=POS.done;
+      cart.innerHTML='<div class="posok"><i>✓</i><h4>Venta registrada</h4><p>'+d.n+' prenda'+(d.n===1?'':'s')+'</p><dl><div><dt>Total</dt><dd>'+money(d.tot)+'</dd></div>'+(d.recv!=null?'<div><dt>Recibido</dt><dd>'+money(d.recv)+'</dd></div><div class="v"><dt>Vuelto</dt><dd>'+money(Math.max(0,d.recv-d.tot))+'</dd></div>':'')+'</dl></div>';
+      foot.innerHTML='<button class="btn pri big" id="pos-new">Nueva venta</button>';
+      $('#pos-new').onclick=function(){POS.done=null;POS.recv='';rnd();inp.focus()};
+      return;
+    }
+    if(!POS.lines.length){cart.innerHTML='<div class="empty" style="margin-top:6px">Escaneá una prenda para empezar. Cada código que leas se suma a la venta.</div>';foot.innerHTML='';return}
+    var h='<div class="pcart">';
+    POS.lines.forEach(function(l,n){
+      var av=posAvail(l.k,l.vk).length,max=l.qty>=av;
+      h+='<div class="pl"><div class="pn"><b>'+esc(l.name)+'</b><small>'+esc(varLabel(l))+'</small><small class="'+(max?'warn':'')+'">'+(av?(max?'Es todo lo que hay: '+av+' en stock':'Quedan '+av+' en stock'):'Sin stock')+'</small></div>'
+       +'<div class="pq"><button data-pm="-1" data-pi="'+n+'" aria-label="Menos">−</button><span>'+l.qty+'</span><button data-pm="1" data-pi="'+n+'" aria-label="Más">+</button></div>'
+       +'<div class="pp"><input type="number" inputmode="decimal" data-pprice="'+n+'" value="'+(l.price==null?'':l.price)+'" aria-label="Precio"><b>'+money((+l.price||0)*l.qty)+'</b></div>'
+       +'<button class="px" data-prm="'+n+'" aria-label="Quitar">×</button></div>'});
+    cart.innerHTML=h+'</div>';
+    var t=posTotal(),dn=[1000,2000,5000,10000,20000,50000,100000].filter(function(x){return x>=t}).slice(0,4);
+    foot.innerHTML='<div class="pt1"><span>Total · '+POS.lines.reduce(function(a,l){return a+l.qty},0)+' prenda'+(POS.lines.reduce(function(a,l){return a+l.qty},0)===1?'':'s')+'</span><b>'+money(t)+'</b></div>'
+     +'<div class="prec"><label>Recibido<input id="pos-recv" type="number" inputmode="decimal" placeholder="¿Cuánto te dan?" value="'+esc(POS.recv)+'"></label><div class="pchg" id="pos-chg"></div></div>'
+     +'<div class="chipsm"><button data-rc="'+t+'">Justo</button>'+dn.map(function(x){return '<button data-rc="'+x+'">'+money(x)+'</button>'}).join('')+'</div>'
+     +'<button class="btn pri big" id="pos-go">Cobrar '+money(t)+'</button>';
+    chg();
+    $('#pos-recv').oninput=chg;
+    [].forEach.call(foot.querySelectorAll('[data-rc]'),function(b){b.onclick=function(){$('#pos-recv').value=b.dataset.rc;chg()}});
+    $('#pos-go').onclick=finish;
+  }
+  function addLine(k,v){
+    var ex=POS.lines.filter(function(l){return l.k===k&&l.vk===v.vk})[0];
+    if(ex){if(ex.qty>=v.n){toast('Solo hay '+v.n+' en stock de '+ex.name);return}ex.qty++;toast('+1 '+ex.name)}
+    else{POS.lines.push({k:k,vk:v.vk,talle:v.talle,color:v.color,name:v.name,price:v.price==null?0:v.price,qty:1});toast('Agregado: '+v.name)}
+    $('#pos-pick').innerHTML='';rnd();
+  }
+  function addByCode(c){
+    c=String(c||'').trim();if(!c)return;
+    var k=typeByCode(c);if(!k){toast('No hay ninguna prenda con el código '+c);return}
+    if(POS.done){POS.done=null;POS.recv=''}
+    var vs=posVariants(k);
+    if(!vs.length){var nm=(S.items.filter(function(i){return tkey(i.producto)===k})[0]||{}).producto;toast('Sin stock de '+nm);return}
+    if(vs.length===1){addLine(k,vs[0]);return}
+    var p=$('#pos-pick');
+    p.innerHTML='<div class="pick"><b>'+esc(vs[0].name)+'</b><small>Elegí talle y color</small><div class="chipsm">'+vs.map(function(v,n){return '<button data-pv="'+n+'">'+esc(varLabel(v))+' <em>'+v.n+'</em></button>'}).join('')+'</div></div>';
+    [].forEach.call(p.querySelectorAll('[data-pv]'),function(b){b.onclick=function(){addLine(k,vs[+b.dataset.pv])}});
+  }
+  $('#pos-cart').addEventListener('click',function(e){
+    var b=e.target.closest('[data-pm],[data-prm]');if(!b)return;
+    if(b.dataset.prm!==undefined){POS.lines.splice(+b.dataset.prm,1);rnd();return}
+    var l=POS.lines[+b.dataset.pi],dq=+b.dataset.pm;if(!l)return;
+    if(dq>0){var av=posAvail(l.k,l.vk).length;if(l.qty>=av){toast('Solo hay '+av+' en stock');return}l.qty++}
+    else{l.qty--;if(l.qty<1)POS.lines.splice(+b.dataset.pi,1)}
+    rnd();
+  });
+  $('#pos-cart').addEventListener('change',function(e){var i=e.target.dataset.pprice;if(i===undefined)return;var l=POS.lines[+i];if(l){l.price=Math.max(0,parseFloat(String(e.target.value).replace(',','.'))||0);rnd()}});
+  function finish(){
+    if(RO()){toast('Esta cuenta es de solo lectura');return}
+    if(!POS.lines.length)return;
+    var picks=[];
+    for(var n=0;n<POS.lines.length;n++){
+      var l=POS.lines[n],av=posAvail(l.k,l.vk).sort(function(a,b){return (a.fechaIngreso||'')<(b.fechaIngreso||'')?-1:(a.fechaIngreso||'')>(b.fechaIngreso||'')?1:a.id-b.id});
+      if(av.length<l.qty){toast('Ya no hay stock suficiente de '+l.name+' (quedan '+av.length+')');rnd();return}
+      picks.push([l,av.slice(0,l.qty)]);
+    }
+    var cli=(POS.cli||'').trim(),pagado=POS.pagado==='1',t0=Date.now(),cnt=0,tot=posTotal(),names=[];
+    picks.forEach(function(p){names.push(p[0].qty+'× '+p[0].name);p[1].forEach(function(it){it.vendido=true;it.fechaVenta=today();it.cliente=cli||null;it.pagado=pagado;it.venta=+p[0].price||0;it.ganancia=(+p[0].price||0)-(+it.costo||0);it.ventaTs=t0+cnt;cnt++})});
+    var rv=parseFloat(String(POS.recv).replace(',','.'));
+    log('Venta',cnt+' prenda'+(cnt===1?'':'s')+' · '+money(tot)+(cli?' · '+cli:'')+(pagado?'':' · debe')+' ('+names.join(', ').slice(0,110)+')');
+    persist();render();
+    POS.done={n:cnt,tot:tot,recv:isNaN(rv)||POS.recv===''?null:rv};POS.lines=[];POS.cli='';POS.pagado='1';
+    $('#pos-cli').value='';$('#pos-pg').value='1';
+    rnd();beep();
+  }
+  inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();addByCode(inp.value);inp.value=''}});
+  function found(code){var n=Date.now();if(code===lastCode&&n-lastT<1800)return;lastCode=code;lastT=n;beep();addByCode(code)}
   $('#s-img').onchange=function(){
     var f=this.files[0];if(!f)return;toast('Leyendo código…');
     decodeFile(f).then(function(c){if(c)found(c);else toast('No pude leer el código. Acercate, que se vea entero y bien iluminado, o escribilo.')});
@@ -1218,7 +1396,7 @@ function scanModal(){
   $('#s-cam').onclick=function(){
     if(running){stop();this.textContent='Abrir cámara';return}
     var btn=this;
-    if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){toast('Este navegador no permite la cámara acá. Usá “Sacar foto del código”.');return}
+    if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){toast('Este navegador no permite la cámara acá. Usá “Foto del código”.');return}
     navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'},width:{ideal:1280},height:{ideal:720}},audio:false}).then(function(s2){
       stream=s2;running=true;btn.textContent='Cerrar cámara';
       var v=$('#s-vid');$('#cam').hidden=false;v.srcObject=s2;v.setAttribute('playsinline','');v.play().catch(function(){});
@@ -1229,13 +1407,14 @@ function scanModal(){
           var sc=Math.min(1,1000/v.videoWidth);cv.width=Math.round(v.videoWidth*sc);cv.height=Math.round(v.videoHeight*sc);
           cv.getContext('2d',{willReadFrequently:true}).drawImage(v,0,0,cv.width,cv.height);
           var c=null;try{c=decodeCanvas(cv)}catch(e){}
-          if(c){found(c);btn.textContent='Abrir cámara';return}
-          if(det){busy=true;det.detect(cv).then(function(r){busy=false;if(r.length&&running){found(r[0].rawValue);btn.textContent='Abrir cámara'}}).catch(function(){busy=false})}
+          if(c)found(c);
+          else if(det){busy=true;det.detect(cv).then(function(r){busy=false;if(r.length&&running)found(r[0].rawValue)}).catch(function(){busy=false})}
         }
-        timer=setTimeout(tick,110);
+        timer=setTimeout(tick,120);
       })();
-    }).catch(function(){toast('La cámara no se pudo abrir (permiso o navegador). Usá “Sacar foto del código”.')});
+    }).catch(function(){toast('La cámara no se pudo abrir (permiso o navegador). Usá “Foto del código”.')});
   };
+  rnd();
   setTimeout(function(){if(matchMedia('(pointer:fine)').matches)inp.focus()},50);
 }
 function accountsModal(){
@@ -1306,6 +1485,10 @@ document.addEventListener('click',function(ev){
   if(t.id==='mb'||t.id==='mb2'){$('#nav').classList.toggle('open');return}
   if(d.page){ui.page=d.page;ui.q='';ui.limit=60;ui.month='all';ui.selMode=false;ui.sel={};$('#nav').classList.remove('open');render();$('#main').scrollTop=0}
   else if(d.act){var a=d.act;
+    if(a==='notifon'){try{Notification.requestPermission().then(function(){render()})}catch(e){}return}
+    if(a==='ntfygen'){var u=new Uint8Array(9);crypto.getRandomValues(u);$('#nt-topic').value='genova-'+Array.from(u).map(function(x){return (x%36).toString(36)}).join('')+Date.now().toString(36).slice(-3);return}
+    if(a==='ntfysave'){if(!(isOwner||localMode))return;CFG.ntfy=val('nt-topic').replace(/[^A-Za-z0-9_-]/g,'');saveAccounts();render();toast(CFG.ntfy?'Canal guardado':'Avisos al celular desactivados');return}
+    if(a==='ntfytest'){if(!CFG.ntfy){toast('Primero guardá un nombre');return}pushNow('Génova Indumentaria','Aviso de prueba: todo funciona');toast('Prueba enviada');return}
     if(a==='cats'){catsModal();return}if(a==='print'){printModal(null);return}if(a==='selmode'){ui.selMode=!ui.selMode;if(!ui.selMode)ui.sel={};render();return}
     if(a==='signout'){window.__signOut();return}if(a==='cfgsave'){if(!(isOwner||localMode))return;CFG.brand=val('cf-brand')||'Génova';CFG.sub=val('cf-sub');CFG.moneda=val('cf-mon')||'$';applyCfg();saveAccounts();render();toast('Configuración guardada')}else if(a==='claim')claimAcc();else if(a==='accounts')accountsModal();else if(a==='new')itemModal(null);else if(a==='export')exportData();else if(a==='csv')exportCsv();else if(a==='import')importModal();else if(a==='scan')scanModal();
     else if(a==='setpin'){var p=val('pin');if(!/^\d{4,8}$/.test(p)){toast('El PIN debe tener de 4 a 8 números');return}sha(p).then(function(h){D[home].pinHash=h;ui.unlocked=true;persist(home);render();toast('PIN guardado')})}
@@ -1322,11 +1505,14 @@ document.addEventListener('click',function(ev){
 });
 document.addEventListener('input',function(ev){if(ev.target.id==='q'){ui.q=ev.target.value;ui.limit=60;render()}});
 document.addEventListener('change',function(ev){
+  if(ev.target.id==='cf-size'){try{localStorage.setItem('genova-size',ev.target.value)}catch(e){}applySize();render()}
   if(ev.target.id==='cf-mode'){try{localStorage.setItem('genova-theme',ev.target.value)}catch(e){}applyCfg();render()}
   if(ev.target.id==='estado'){ui.estado=ev.target.value;ui.limit=60;render()}
   if(/^ord[IVPCHG]$/.test(ev.target.id)){ui[ev.target.id]=ev.target.value;ui.limit=60;render()}
   if(ev.target.id==='month'){ui.month=ev.target.value;ui.limit=60;render()}
 });
+applySize();
+document.addEventListener('gesturestart',function(e){e.preventDefault()});
 boot();
 })();
 </script>
